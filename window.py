@@ -1,10 +1,12 @@
+#-*- codding:utf-8 -*-
 from tkinter import *
 
 
 class Window(Tk):
-    def ___init__(self):
+    def __init__(self):
         super().__init__()
-        Label(text="Введіть пошуковий запит:").grid(
+        print("test")
+        Label(self ,text="Введіть пошуковий запит:").grid(
            row = 0, column=0, columnspan=2 
         )
         
