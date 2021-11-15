@@ -10,9 +10,10 @@ class Search_engine():
         """)
         print (res)
     def search_track(self, search_text):
-        #search_text = '"%'+search_text+'%"'
+        search_text = '%'+search_text+'%'
+        print(search_text)
         res=self.db.select('''SELECT Name FROM tracks
-            WHERE Name=?;
+            WHERE Name LIKE ?;
         ''', search_text);
         return res
 
