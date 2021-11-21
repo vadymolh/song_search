@@ -17,12 +17,18 @@ class Window(Tk):
         self.entry_search.grid(row=1, column=0,
                                columnspan=2)
         self.search_but.grid(row=1, column=2)
+
+        self.list_track = Listbox(self, width=60, height=15)
+        self.list_track.grid(row=2, column=0, columnspan=2,
+                             sticky=W)                   
                                    
     def search(self):
         print("Text from entry:",self.search_text.get())
         text = self.search_text.get()
         result = self.db_search.search_track(text)
         print (result)
+        for row in result:
+            self.list_track.insert(END, row[0])
 if __name__=="__main__":
     root = Window()
     root.geometry("600x400")
